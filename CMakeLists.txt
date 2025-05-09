@@ -14,6 +14,7 @@ add_subdirectory(OpenXLSX)
 
 add_executable(parser main.cpp)
 set_target_properties(parser PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
-
+set(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g")
 target_link_libraries(parser OpenXLSX::OpenXLSX)
+target_link_libraries(parser boost_program_options)
 target_include_directories(parser PRIVATE /usr/local/include)
